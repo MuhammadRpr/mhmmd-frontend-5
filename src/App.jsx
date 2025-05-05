@@ -3,7 +3,7 @@ import labels from "./testimonials";
 
 function Testi({ nama, alamat, nomorTelpon, urlPhotoProfile, status }) {
   return (
-    <div className="card p-4 m-4 border-2 w-100 h-26">
+    <div className={`card p-4 m-4 border-2 w-100 h-26 ${status ? "border-green-600" : "border-slate-300"}`}>
       <div className="satu flex gap-2 ">
         <img
           src={urlPhotoProfile}
@@ -11,7 +11,7 @@ function Testi({ nama, alamat, nomorTelpon, urlPhotoProfile, status }) {
           className="rounded-full w-10 h-10"
         ></img>
         <p className="text-2x1">{nama}</p>
-        <p className={`rounded-full w-12 h-5 text-xs justify-center align-center text-center ${labels.status == "temen" ? "bg-green-600" : "bg-red-400"}`}>temen</p>
+        {status ? <p>Best Friend</p> : ""}
       </div>
       <hr />
       <div className="dua flex text-sm justify-between align-center">
